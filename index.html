@@ -2,84 +2,113 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DoMCer Search</title>
-    <link href="img/favicon.png" type="image/png" rel="icon">
-    <link href="css/__plugins.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="css/iconfont.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.35">
+    <style>
+        :root {
+            --c-bg: #fff;
+        }
+
+        html, body {
+            background-color: var(--c-bg);
+        }
+    </style>
+    <script>
+        const userMode = localStorage.getItem('vuepress-color-scheme');
+        const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+            document.documentElement.classList.toggle('dark', true);
+        }
+        function custom_close() {
+          if (confirm("您确定要关闭本页吗?")) {
+            window.opener = null;
+            window.open('', '_self');
+            window.close();
+          }
+        }
+    </script>
+    <link rel="icon"
+          href="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/18/4c/ab/184cabcb-bdcd-2ae5-f48d-acc783341025/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x0w.webp">
+    <title>Domcer查询</title>
+    <meta name="description" content="DoMCer查询网站">
+    <link rel="stylesheet" href="css/style1.css">
 </head>
-<body id="letsGo">
-	<div class="loader">
-		<p class="loader-text">loading</p>
-	</div>
-	<p class="rotate-text">By 我是一只bb鸡</p>
-	<div class="main-wrapper">
-		<header>
-			<nav>
-				<div class="row">
-					<div class="col-4">
-						<div class="logo">
-							<a href="index.html">FuckETS</a>
-						</div>
-					</div>
-					<div class="col-8 text-right">
-						<ul class="socials">
-							<li><a href="https://github.com/bb-chicken/" target="_blank"><i class="fa fa-github"></i></a></li>
-							<li><a href="https://qm.qq.com/q/p9fnj458Nc/" target="_blank" style="text-decoration: none"><i class="iconfont icon-QQ"></i></a></li>
-						</ul>
-
-					</div>
-				</div>
-			</nav>
-
-		</header>
-		<div class="intro">
-			<div class="row align-items-center justify-content-end h-50">
-				<div class="col-md-10">
-					<div class="home-intro">
-						<h2 data-aos="fade-up">FuckETS<span>  </span></h2>
-						<h2 data-aos="fade-up" data-aos-delay="250">往下滑查看这周的E听说答案吧！</h2>
-						<div class="arrow-down" data-aos="fade-up" data-aos-delay="500">
-							<svg width="24" height="23.1" xmlns="http://www.w3.org/2000/svg" fill="#fff" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"></path></svg>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row justify-content-end">
-			<div class="col-md-10">
-				<div class="next-page">
-					<div class="row">
-						<div class="col" data-aos="fade-right">
-							<a href="ets.html">
-								<div class="arrow-right">
-									<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 32 32" style=" fill:#fff;"><path d="M 21.1875 9.28125 L 19.78125 10.71875 L 24.0625 15 L 4 15 L 4 17 L 24.0625 17 L 19.78125 21.28125 L 21.1875 22.71875 L 27.90625 16 Z"></path></svg>
-								</div>
-								<h2>点击这里</h2>
-								<p>查看本周的E听说答案</p>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<div class="copyright-text" data-aos="fade-down">
-					<a class="scrollTop" href="index.html">
-						<div class="arrow-top">
-							<svg width="24" height="23.1" xmlns="http://www.w3.org/2000/svg" fill="#fff" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"></path></svg>
-						</div>
-					</a>
-					<p>By:我是一只bb鸡</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<script src="js/plugins.js"></script>
-	<script src="js/main.js"></script>
+<body>
+<div id="app">
+    <div class="theme-container no-sidebar">
+        <header ref_key="navbar" class="navbar">
+            <div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0">
+                <div class="icon" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <span><a aria-current="page" href="index.html" class="router-link-active router-link-exact-active"><span
+                    class="site-name">ETS-Ans 查询工具</span></a></span>
+            <div class="navbar-items-wrapper" style>
+                <nav class="navbar-items can-hide">
+                    <div class="navbar-item">
+                        <a href="https://www.ets100.com"> E听说官网 </a>
+                    </div>
+                    <div class="navbar-item">
+                        <a class="external-link" href="https://qm.qq.com/q/p9fnj458Nc" rel="noopener noreferrer"
+                           target="_blank" aria-label="QQ"> 作者QQ
+                            <span>
+                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                 focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15">
+                            <path
+                                    fill="currentColor"
+                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon
+                                    fill="currentColor"
+                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span
+                                    class="external-link-icon-sr-only">open in new window</span>
+                        </span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main class="home">
+            <header class="hero"><img
+                    src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/18/4c/ab/184cabcb-bdcd-2ae5-f48d-acc783341025/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x0w.webp"
+                    alt="go-cqhttp">
+                <h1 id="main-title">ETS-Ans Search</h1>
+                <p class="description">基于E听说源文件实现</p>
+                <p class="actions">
+                    <a class="external-link action-button secondary" onClick="custom_close()"> 我不需要🚫 <span>
+                    <a href="ets.html" class="action-button primary" aria-label="快速上手🚀">立即使用🚀 </a>
+                </p>
+            </header>
+            <div class="features">
+                <div class="feature"><h2>过去</h2>
+                    <p>E听说拿不到80%怎么办。</p></div>
+                <div class="feature"><h2>现在</h2>
+                    <p>有了答案80%不是轻轻松松？</p></div>
+                <div class="feature"><h2>未来</h2>
+                    <p>或许他能自动帮我读。</p></div>
+            </div>
+            <div class="theme-default-content custom"></div>
+            <p class="footer"> | By
+                <a href="https://qm.qq.com/q/p9fnj458Nc" target="_blank">BB_CHICKEN</a> |
+            </p>
+        </main>
+    </div>
+</div>
 </body>
 </html>
+<!--
+       　  　▃▆█▇▄▖
+　 　 　 ▟◤▖　　　◥█▎
+   　 ◢◤　 ▐　　　 　▐▉
+　 ▗◤　　　▂　▗▖　　▕█▎
+　◤　▗▅▖◥▄　▀◣　　█▊
+▐　▕▎◥▖◣◤　　　　◢██
+█◣　◥▅█▀　　　　▐██◤
+▐█▙▂　　     　◢██◤
+◥██◣　　　　◢▄◤
+ 　　▀██▅▇▀
+
+
+哲学♂ 114514
+ -->
